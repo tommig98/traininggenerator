@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di Schede di Allenamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Step Nome e Cognome -->
+        <div class="form-section" id="formStepName">
+            <h1>Inserisci il tuo nome e cognome</h1>
+            <form id="nameForm">
+                <label for="firstName">Nome</label>
+                <input type="text" id="firstName" required>
+                <label for="lastName">Cognome</label>
+                <input type="text" id="lastName" required>
+                <button type="button" id="nextStepName">Prossimo</button>
+            </form>
+        </div>
+
+        <!-- Step Dati Fisici -->
+        <div class="form-section" id="formStep1">
+            <h1>Inserisci i tuoi dati fisici</h1>
+            <form id="userForm">
+                <label for="age">Età</label>
+                <input type="number" id="age" required>
+                <label for="gender">Sesso</label>
+                <select id="gender">
+                    <option value="male">Maschio</option>
+                    <option value="female">Femmina</option>
+                </select>
+                <label for="weight">Peso (kg)</label>
+                <input type="number" id="weight" required>
+                <label for="height">Altezza (cm)</label>
+                <input type="number" id="height" required>
+                <label for="experience">Livello di Esperienza:</label>
+                <select id="experience" required>
+                    <option value="beginner">Principiante</option>
+                    <option value="intermediate">Intermedio/Avanzato</option>
+                </select>
+                <button type="button" id="nextStep">Prossimo</button>
+            </form>
+        </div>
+
+        <!-- Step Allenamento -->
+        <div class="form-section" id="formStep2">
+            <h1>Imposta il tuo allenamento</h1>
+            <form id="trainingForm">
+                <label for="days">Quante volte a settimana ti vuoi allenare?</label>
+                <select id="days">
+                    <option value="1">1 volta</option>
+                    <option value="2">2 volte</option>
+                    <option value="3">3 volte</option>
+                    <option value="4">4 volte</option>
+                </select>
+                <label for="duration">Durata dell'allenamento</label>
+                <select id="duration">
+                    <option value="1">Meno di 1 ora</option>
+                    <option value="1">1 ora</option>
+                    <option value="1.5">1 ora e mezza</option>
+                    <option value="2">Più di 2 ore</option>
+                </select>
+                <label for="goal">Obiettivo</label>
+                <select id="goal">
+                    <option value="dimagrimento">Dimagrimento</option>
+                    <option value="tonificazione">Tonificazione</option>
+                    <option value="ipertrofia">Ipertrofia</option>
+                </select>
+                <label for="trainingType">Tipo di allenamento</label>
+                <select id="trainingType">
+                    <option value="totalBody">Total Body</option>
+                    <option value="splitRoutine">Split Routine</option>
+                </select>
+                <button type="button" id="generateProgram">Genera il tuo Allenamento</button>
+            </form>
+        </div>
+
+        <!-- Step Programma Allenamento -->
+        <div class="result-section" id="trainingProgram">
+            <h1>Ecco il tuo Allenamento</h1>
+            <div id="programHeader">
+                <h2 id="userName"></h2>
+            </div>
+            <div id="programOutput"></div>
+            <button id="downloadPDF">Scarica</button>
+            <button id="modifyProgram">Modifica</button>
+        </div>
+    </div>
+
+    <!-- Libreria jsPDF per la generazione di PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
